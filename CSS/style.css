@@ -1,6 +1,6 @@
-/* Color Palette : https://coolors.co/37392e-19647e-28afb0-ddcecd-eee5e5 */
 body{
     height: 100vh;
+    width: 100%;
     font-family: "Ubuntu";
     margin: 0;
     padding: 0;
@@ -17,12 +17,10 @@ body{
     margin: 0;
     padding: 0;
 }
-nav{
-    position: absolute;
-}
 .navbar-brand{
     font-weight: 600;
     font-size: 1.5rem;
+    width: auto;
 }
 #nav-bar img{
     width: 7.5%;
@@ -38,6 +36,9 @@ nav{
 }
 
 /* Intro Column */
+.row{
+    width: 100%;
+}
 #intro{
     height: auto;
     margin: 0;
@@ -48,13 +49,14 @@ nav{
     height: 100%;
     margin: 0;
     height: 75%;
-    padding: 5% 3% 1% 10%;
+    padding: 2.5% 3% 1% 10%;
 }
 .intro-img {
-    width: 90%;
-    margin: auto;
+    text-align: center;
+    width: 80%;
+    margin: 0 auto 0 auto;
+    padding: 0;
     position: relative;
-    top:-15%
 }
 .intro-head{
     font-family: "Ubuntu";
@@ -76,7 +78,7 @@ nav{
     font-size: 1.1rem;
 }
 .col2{
-    margin: 0;
+    margin: 0 auto 0 auto;
     text-align: center;
     padding: 0 2% 0 2%;
 }
@@ -99,12 +101,13 @@ nav{
     padding: 5%;
 }
 .feature-title{
-    font-size: 1.25rem;
+    font-size: 1.3rem;
     font-weight: 900;
 }
 .feature-desc{
     font-size: 1rem;
     font-weight: 400;
+    font-family: "Roboto";
 }
 .feature-img{
     color: #58bfff;
@@ -114,4 +117,24 @@ nav{
 /* Generate-Pass */
 #generate-pass{
 background-color: #58bfff;
+}
+
+
+/* Media Queries */
+
+@media (max-width:550px) {
+    .intro-img {
+        width: 100%;
+    }
+    .navbar-brand{
+        width: auto;
+    }
+    .intro-col{
+    padding: 4% 3% 1% 7.5%;
+    }
+    
+.navbar-collapse{
+    flex-direction:row;
+    
+}
 }
