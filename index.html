@@ -42,6 +42,8 @@
     <link rel="stylesheet" href="CSS/style.css" />
     <!-- Favicon -->
     <link rel="icon" href="imgs/favicon.ico" />
+    <!-- JavaScript -->
+    <script src="JS/main.js"></script>
   </head>
 
   <body>
@@ -133,19 +135,38 @@
       </div>
     </section>
 
+    <!-- Password Generate -->
     <section id="generate-pass" class="generate-pass-col">
       <h1 class="gen-pass-heading">Generate Password</h1>
-      <div style="align-items: center">
-        <p class="input-desc">Select Password Lenght :</p>
-        <select class="custom-select pass-len-select" id="pass-len">
-          <option selected value="1">6 to 10 Characters</option>
-          <option value="2">11 to 12 Characters</option>
-          <option value="3">12 to 15 Characters</option>
-          <option value="4">15 to 18 Characters</option>
-        </select>
-      </div>
-      <div class="row pass-gen-options">
+      <div class="row center-align">
         <div class="col col-lg-4 col-12">
+          <p class="input-desc">Select Password Length :</p>
+        </div>
+        <div class="col col-lg-4 col-12">
+          <input
+            type="range"
+            min="4"
+            max="20"
+            step="1"
+            value="8"
+            class="slider"
+            id="pass-len-input"
+          />
+        </div>
+        <div class="col col-lg-4 col-12">
+          <input
+            type="text"
+            class="form-control pass-len-display"
+            aria-label="Password Length"
+            readonly
+            value=""
+            id="len-output-display"
+          />
+        </div>
+      </div>
+
+      <div class="row center-align">
+        <div class="col col-lg-4 col-12 pass-gen-options">
           <div class="form-check form-check-inline">
             <input
               class="form-check-input option-checkbox"
@@ -159,7 +180,7 @@
             >
           </div>
         </div>
-        <div class="col col-lg-4 col-12">
+        <div class="col col-lg-4 col-12 pass-gen-options">
           <div class="form-check form-check-inline">
             <input
               class="form-check-input"
@@ -190,8 +211,10 @@
           id="pass-output-display"
         />
         <div class="input-group-append">
-          <button class="btn btn-light copy-pass-button" type="button">
-            <i class="fa-duotone fa-copy"></i> Copy
+          <button class="btn btn copy-pass-button" type="button">
+            <img
+              src="https://img.icons8.com/ios-glyphs/30/407bff/copy-2.png"
+            />&nbsp; Copy
           </button>
         </div>
       </div>
@@ -200,4 +223,12 @@
       </button>
     </section>
   </body>
+  <script>
+    var slider = document.getElementById("pass-len-input");
+    var output = document.getElementById("len-output-display");
+    output.value = slider.value + " Characters";
+    slider.oninput = function () {
+      output.value = this.value + " Characters";
+    };
+  </script>
 </html>
