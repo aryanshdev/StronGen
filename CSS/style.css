@@ -1,0 +1,117 @@
+/* Color Palette : https://coolors.co/37392e-19647e-28afb0-ddcecd-eee5e5 */
+body{
+    height: 100vh;
+    font-family: "Ubuntu";
+    margin: 0;
+    padding: 0;
+    color:white;
+}
+
+/* Common Alignment */
+.center-align{
+    text-align: center;
+}
+/* Navbar */
+#nav-bar{
+    background-color: #407bff;
+    margin: 0;
+    padding: 0;
+}
+nav{
+    position: absolute;
+}
+.navbar-brand{
+    font-weight: 600;
+    font-size: 1.5rem;
+}
+#nav-bar img{
+    width: 7.5%;
+    border-radius: 100%;
+}
+.navbar-collapse{
+    flex-direction: row-reverse;
+    
+}
+.nav-item a{
+    text-decoration: none;
+    font-weight: 500;
+}
+
+/* Intro Column */
+#intro{
+    height: auto;
+    margin: 0;
+    width: 100%;
+}
+.intro-col{
+    background-color: #407bff;
+    height: 100%;
+    margin: 0;
+    height: 75%;
+    padding: 5% 3% 1% 10%;
+}
+.intro-img {
+    width: 90%;
+    margin: auto;
+    position: relative;
+    top:-15%
+}
+.intro-head{
+    font-family: "Ubuntu";
+    font-weight: 600;
+    font-size: 3rem;
+    letter-spacing: 1px;
+    
+}
+.intro-desc{
+    font-family: "Roboto";
+    font-weight: 200;
+    font-size: 1.5rem;
+    margin-bottom: 7.5%;
+}
+
+.intro-desc2{
+    font-family: "Roboto";
+    font-weight: 400;
+    font-size: 1.1rem;
+}
+.col2{
+    margin: 0;
+    text-align: center;
+    padding: 0 2% 0 2%;
+}
+.gen-pass-intro-button{
+    margin-bottom: 10%;
+}
+
+/* Features */
+#features{
+    background-color: white;
+    color : black;
+    padding: 2% 5%;
+}
+
+.features-col{
+    text-align: center;
+}
+
+.features-col .col{
+    padding: 5%;
+}
+.feature-title{
+    font-size: 1.25rem;
+    font-weight: 900;
+}
+.feature-desc{
+    font-size: 1rem;
+    font-weight: 400;
+}
+.feature-img{
+    color: #58bfff;
+    margin: 0% auto 7.5% auto;
+}
+
+/* Generate-Pass */
+#generate-pass{
+background-color: #58bfff;
+}
