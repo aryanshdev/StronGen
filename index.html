@@ -73,7 +73,7 @@
               <a class="nav-link" href="#features">Features</a>
             </li>
             <li class="nav-item active">
-              <a class="nav-link" href="#">Why Use Strong Passwords</a>
+              <a class="nav-link" href="#why-use">Why Use Strong Passwords</a>
             </li>
             <li class="nav-item active">
               <a class="nav-link" href="#">Reviews</a>
@@ -135,6 +135,26 @@
       </div>
     </section>
 
+    <!-- Why Use Strong Password -->
+    <section id="why-use">
+      <h1>Why Use Strong Passwords ?</h1>
+      <p>
+        Using strong passwords means creating a password that is difficult for
+        others to guess or crack. This helps protect your personal information,
+        such as your email, bank accounts, or social media, from being accessed
+        by people who shouldn't have access to it. Strong passwords can help
+        prevent identity theft, fraud, and other bad things from happening to
+        you.
+      </p>
+      <h2>Creating Strong Passwords</h2>
+      <p>
+        Passwords should have an ideal length of 12 to 15 characters as longer
+        passwords are harder to crack. Also Passwords should contain a
+        combination of capital and small case letters along with numbers and
+        symbols.<br />Avoid keeping your Birthdate, Your Pet's Name, Your Phone
+        Number, In short your personal information as your password.
+      </p>
+    </section>
     <!-- Password Generate -->
     <section id="generate-pass" class="generate-pass-col">
       <h1 class="gen-pass-heading">Generate Password</h1>
@@ -152,6 +172,7 @@
             class="slider"
             id="pass-len-input"
           />
+          <label id="pass-len-label" class="pass-len-label" for="pass-len-input">Length Fine, but try Choosing Longer</label>
         </div>
         <div class="col col-lg-4 col-12">
           <input
@@ -166,7 +187,7 @@
       </div>
 
       <div class="row center-align">
-        <div class="col col-lg-4 col-12 pass-gen-options">
+        <div class="col col-lg-5 col-12 pass-gen-options">
           <div class="form-check form-check-inline">
             <input
               class="form-check-input option-checkbox"
@@ -180,7 +201,7 @@
             >
           </div>
         </div>
-        <div class="col col-lg-4 col-12 pass-gen-options">
+        <div class="col col-lg-5 col-12 pass-gen-options">
           <div class="form-check form-check-inline">
             <input
               class="form-check-input"
@@ -226,8 +247,26 @@
   <script>
     var slider = document.getElementById("pass-len-input");
     var output = document.getElementById("len-output-display");
+    var label = document.getElementById("pass-len-label");
     output.value = slider.value + " Characters";
     slider.oninput = function () {
+      var value = parseInt(this.value);
+      if (value < 8) {
+        label.innerHTML = "Longer Length Suggested";
+        label.style.color = "rgb(255, 85, 0)";
+      }
+      else if (value >= 8 && value <= 12) {
+        label.innerHTML = "Length Fine, but try Choosing Longer";
+        label.style.color = "#ffeb00";
+      }
+      else if( value >=12 & value <= 15){
+        label.innerHTML = "Ideal Length";
+        label.style.color = "rgb(0, 255, 21)";
+      }
+      else{
+        label.innerHTML = "Passsword might be harder to handle";
+        label.style.color="rgb(255 192 49)";
+      }
       output.value = this.value + " Characters";
     };
   </script>
