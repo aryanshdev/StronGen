@@ -234,7 +234,7 @@
           id="pass-output-display"
         />
         <div class="input-group-append">
-          <button class="btn btn copy-pass-button" type="button">
+          <button class="btn btn copy-pass-button" onclick="copyToClipboard()" type="button">
             <img
               src="https://img.icons8.com/ios-glyphs/30/407bff/copy-2.png"
             />&nbsp; Copy
@@ -255,7 +255,7 @@
       var value = parseInt(this.value);
       if (value < 8) {
         label.innerHTML = "Longer Length Suggested";
-        label.style.color = "rgb(255, 85, 0)";
+        label.style.color = "#ef5b10";
       } else if (value >= 8 && value <= 12) {
         label.innerHTML = "Length Fine, but try Choosing Longer";
         label.style.color = "#ffeb00";
