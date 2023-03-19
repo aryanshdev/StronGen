@@ -226,9 +226,10 @@ body {
     -webkit-appearance: none;
     width: 90%;
     height: 10px;
-    background: linear-gradient(90deg, rgb(255, 85, 0) 25%, #ffeb00 25%, #ffeb00 50.5%, rgb(0, 255, 21) 50.5%);
+    background: #58bfff;
     border-radius: 15px;
     outline: none;
+    transition-duration: 250ms;
 }
 
 .slider::-webkit-slider-thumb {
@@ -244,6 +245,10 @@ body {
     width: 25px;
     height: 25px;
     background: white;
+}
+.slider:hover{
+    
+    background: linear-gradient(90deg, rgb(255, 85, 0) 25%, #ffeb00 25%, #ffeb00 50.5%, rgb(0, 255, 21) 50.5%);
 }
 
 /* Media Queries */
