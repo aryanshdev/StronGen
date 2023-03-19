@@ -43,10 +43,11 @@
     <!-- Favicon -->
     <link rel="icon" href="imgs/favicon.ico" />
     <!-- JavaScript -->
-    <script src="JS/main.js"></script>
+    <script type="text/javascript" src="JS/main.js"></script>
   </head>
 
   <body>
+
     <section id="nav-bar">
       <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
         <a class="navbar-brand" href="#nav-bar">
@@ -172,7 +173,9 @@
             class="slider"
             id="pass-len-input"
           />
-          <label id="pass-len-label" class="pass-len-label" for="pass-len-input">Length Fine, but try Choosing Longer</label>
+          <label id="pass-len-label" class="pass-len-label" for="pass-len-input"
+            >Length Fine, but try Choosing Longer</label
+          >
         </div>
         <div class="col col-lg-4 col-12">
           <input
@@ -193,7 +196,6 @@
               class="form-check-input option-checkbox"
               type="checkbox"
               id="use-numbers"
-              value="option1"
               checked
             />
             <label class="form-check-label" for="use-numbers"
@@ -204,10 +206,9 @@
         <div class="col col-lg-5 col-12 pass-gen-options">
           <div class="form-check form-check-inline">
             <input
-              class="form-check-input"
+              class="form-check-input option-checkbox"
               type="checkbox"
               id="use-symbols"
-              value="option2"
               checked
             />
             <label class="form-check-label" for="use-symbols"
@@ -216,8 +217,9 @@
           </div>
         </div>
       </div>
+
       <div class="gen-pass-button">
-        <button class="btn btn-light" type="button">
+        <button class="btn btn-light" onclick="generatePassword()" type="button">
           Generate New Password
         </button>
       </div>
@@ -254,18 +256,15 @@
       if (value < 8) {
         label.innerHTML = "Longer Length Suggested";
         label.style.color = "rgb(255, 85, 0)";
-      }
-      else if (value >= 8 && value <= 12) {
+      } else if (value >= 8 && value <= 12) {
         label.innerHTML = "Length Fine, but try Choosing Longer";
         label.style.color = "#ffeb00";
-      }
-      else if( value >=12 & value <= 15){
+      } else if ((value >= 12) & (value <= 15)) {
         label.innerHTML = "Ideal Length";
         label.style.color = "rgb(0, 255, 21)";
-      }
-      else{
+      } else {
         label.innerHTML = "Passsword might be harder to handle";
-        label.style.color="rgb(255 192 49)";
+        label.style.color = "rgb(255 192 49)";
       }
       output.value = this.value + " Characters";
     };

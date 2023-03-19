@@ -198,6 +198,17 @@ body {
     margin: 2% 0 5% 0;
     color:#ffeb00;
 }
+#pass-output-display{
+    font-family: monospace;
+    font-weight: 700;
+    color: black;
+}
+#use-symbols, #use-numbers{
+    width: 20px;
+    height: 20px; 
+    accent-color: rgb(0, 255, 21);
+    margin: 0 10px 0 0;
+}
 .slidecontainer {
     display: inline-block;
     width: 100%;
@@ -229,11 +240,6 @@ body {
     background: white;
     cursor: pointer;
 }
-input[type="checkbox"]{
-    height: 
-}
-input[type="checkbox"]:checked {
-  }
 .slider::-moz-range-thumb {
     width: 25px;
     height: 25px;
@@ -261,6 +267,9 @@ input[type="checkbox"]:checked {
         flex-direction: row;
 
     }
+    #use-symbols, #use-numbers{
+        width: 25px;
+        height: 25px; }
 }
 
 @media (max-width: 720px) {
