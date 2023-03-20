@@ -14,7 +14,7 @@ function generatePassword() {
     }
     var output = document.getElementById("pass-output-display");
     output.value = password;
-    // updateUsageCount();
+    updateUsageCount();
 }
 
 function displayUsageCount() {
