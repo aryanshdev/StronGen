@@ -1,1 +1,2 @@
-"# strongen" 
+# StronGen
+Password Generator
