@@ -67,8 +67,10 @@ function downloadFile() {
 }
 
 function closeDownloadArea(){
-    var downloadArea = document.getElementById("download-area");
-    downloadArea.style.display = "none";
+    document.getElementById("download-area").style.display = "none";
+    document.getElementById('download-info-text').style.visibility = 'hidden';
+    document.getElementById('website-name').value = '';
+    document.getElementById('username').value = '';
 }
 // Password Generators
 let arrayCharsCaps = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'];

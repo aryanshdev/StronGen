@@ -281,7 +281,7 @@ body {
 
 /* Download Sub Section */
 .download-area {
-    display: non;
+    display: none;
     margin: 0.5% auto 0% auto;
 }
 
