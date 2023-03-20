@@ -46,8 +46,7 @@
     <script type="text/javascript" src="JS/main.js"></script>
   </head>
 
-  <body>
-
+  <body onload="displayUsageCount()">
     <section id="nav-bar">
       <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
         <a class="navbar-brand" href="#nav-bar">
@@ -106,6 +105,7 @@
         </div>
       </div>
     </section>
+
     <!--   FEATURES    -->
     <section id="features" class="features-col">
       <div class="row">
@@ -138,24 +138,43 @@
 
     <!-- Why Use Strong Password -->
     <section id="why-use">
-      <h1>Why Use Strong Passwords ?</h1>
-      <p>
-        Using strong passwords means creating a password that is difficult for
-        others to guess or crack. This helps protect your personal information,
-        such as your email, bank accounts, or social media, from being accessed
-        by people who shouldn't have access to it. Strong passwords can help
-        prevent identity theft, fraud, and other bad things from happening to
-        you.
+      <h1 class="info-head">Why Use Strong Passwords?</h1>
+      <p class="info-text">
+        Using strong password means using a password that is difficult for
+        others to guess or crack. This helps protect your social accounts, bank
+        accounts and information from others and help prevent fraud, and other
+        bad things from happening to you.
       </p>
-      <h2>Creating Strong Passwords</h2>
-      <p>
-        Passwords should have an ideal length of 12 to 15 characters as longer
-        passwords are harder to crack. Also Passwords should contain a
-        combination of capital and small case letters along with numbers and
-        symbols.<br />Avoid keeping your Birthdate, Your Pet's Name, Your Phone
-        Number, In short your personal information as your password.
-      </p>
+      <h2 class="info-head">Creating Strong Passwords</h2>
+
+      <div class="row">
+        <div class="col col-lg-4 col col-md-6 feature">
+          <i class="fa-solid fa-ruler fa-4x feature-img"></i>
+          <h1 class="whyuse-title">Use Longer Passwords</h1>
+          <p class="whyuse-desc">
+            Longer Passwords are harder to crack. Ideal password length is 12 to
+            15 characters
+          </p>
+        </div>
+        <div class="col col-lg-4 col-12 col-md-6">
+          <i class="fa-solid fa-at fa-4x feature-img"></i>
+          <h1 class="whyuse-title">Use Numbers and Symbols</h1>
+          <p class="whyuse-desc">
+            Combining Alphabets, Numbers and Special Characters make it harder
+            to guess and crack the password
+          </p>
+        </div>
+        <div class="col col-lg-4 col-12 col2">
+          <i class="fa-solid fa-ban fa-4x feature-img"></i>
+          <h1 class="whyuse-title">Don't Use Personal Info</h1>
+          <p class="whyuse-desc">
+            Don't use your birthdate, phone number, pet's name etcetera as your
+            passwords as they can be guessed
+          </p>
+        </div>
+      </div>
     </section>
+
     <!-- Password Generate -->
     <section id="generate-pass" class="generate-pass-col">
       <h1 class="gen-pass-heading">Generate Password</h1>
@@ -218,8 +237,12 @@
         </div>
       </div>
 
-      <div class="gen-pass-button">
-        <button class="btn btn-light" onclick="generatePassword()" type="button">
+      <div class="center-align">
+        <button
+          class="btn btn-light gen-pass-button"
+          onclick="generatePassword()"
+          type="button"
+        >
           Generate New Password
         </button>
       </div>
@@ -234,18 +257,127 @@
           id="pass-output-display"
         />
         <div class="input-group-append">
-          <button class="btn btn copy-pass-button" onclick="copyToClipboard()" type="button">
-            <img
-              src="https://img.icons8.com/ios-glyphs/30/407bff/copy-2.png"
-            />&nbsp; Copy
+          <button
+            class="btn btn copy-pass-button"
+            onclick="copyToClipboard()"
+            type="button"
+          >
+            <img src="https://img.icons8.com/ios-glyphs/28/407bff/copy-2.png" />
+            Copy
           </button>
         </div>
       </div>
-      <button class="btn btn-light copy-pass-button" type="button">
-        Download
-      </button>
+      <div class="center-align">
+        <button
+          class="btn btn-light pass-download-btn"
+          onclick="showDownloadArea()"
+        >
+          <i class="fa-solid fa-download" style="color: #407bff"></i
+          >&nbsp;&nbsp; Download
+        </button>
+      </div>
+      <!-- Download Sub-Section -->
+      <div class="download-area" id="download-area">
+        <h3 style="font-size: 1.5rem; font-weight: 700">
+          Download Password File
+        </h3>
+        <div class="row center-align">
+          <div class="col col-lg-5 col-12">
+            <h3 for="website-name" class="download-inp-text">Website Name</h3>
+          </div>
+          <div class="col col-lg-5 col-12">
+            <input
+              class="form-control"
+              placeholder="Website Name"
+              id="website-name"
+              required
+            />
+          </div>
+        </div>
+        <div class="row center-align">
+          <div class="col col-lg-5 col-12">
+            <h3 class="download-inp-text" for="website-name">Username</h3>
+          </div>
+          <div class="col col-lg-5 col-12">
+            <input
+              class="form-control"
+              placeholder="Username"
+              id="username"
+              required
+            />
+          </div>
+        </div>
+        <div class="center-align">
+          <button
+            class="btn btn-light pass-download-btn"
+            id="download-file"
+            onclick="downloadFile()"
+          >
+            <i class="fa-solid fa-download" style="color: #407bff"></i
+            >&nbsp;&nbsp; Download File
+          </button>
+          <label class="label" for="download-file" id="download-info-text"
+            >Download Started</label
+          >
+
+          <button
+            class="btn btn-light close-download-btn"
+            id="download-file"
+            onclick="closeDownloadArea()"
+          >
+            Hide Download Section
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Reviews -->
+    <section id="reviews">
+      <div>
+        <h2 class="count-txt">Generated Passwords For</h2>
+        <h1 id="usageCount">Count</h1>
+        <h2 class="count-txt" style="padding: 0.5% 0 2.5% 0">Accounts</h2>
+      </div>
+      <div
+        id="reviewCarousel"
+        class="carousel slide"
+        data-interval="3000"
+        data-ride="carousel"
+        style="padding: 10px"
+      >
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <h2>Review 1</h2>
+          </div>
+          <div class="carousel-item">
+            <h2 class="review-text">Review 2</h2>
+          </div>
+          <div class="carousel-item">
+            <h2 class="review-text">Review 3</h2>
+          </div>
+          <a
+            class="carousel-control-prev btn-dark"
+            href="#reviewCarousel"
+            role="button"
+            data-slide="prev"
+          >
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+          </a>
+          <a
+            class="carousel-control-next"
+            href="#reviewCarousel"
+            role="button"
+            data-slide="next"
+          >
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+          </a>
+        </div>
+      </div>
     </section>
   </body>
+
   <script>
     var slider = document.getElementById("pass-len-input");
     var output = document.getElementById("len-output-display");
