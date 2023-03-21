@@ -269,8 +269,10 @@
       </div>
       <div class="center-align">
         <button
+          id="pass-download-btn"
           class="btn btn-light pass-download-btn"
           onclick="showDownloadArea()"
+          disabled
         >
           <i class="fa-solid fa-download" style="color: #407bff"></i
           >&nbsp;&nbsp; Download
@@ -278,14 +280,14 @@
       </div>
       <!-- Download Sub-Section -->
       <div class="download-area" id="download-area">
-        <h3 style="font-size: 1.5rem; font-weight: 700">
+        <h3 style="font-size: 1.5rem; font-weight: 700; margin-bottom: 0">
           Download Password File
         </h3>
         <div class="row center-align">
-          <div class="col col-lg-5 col-12">
+          <div class="col col-lg-5 col-12" style="margin: 0.5% auto 0 auto">
             <h3 for="website-name" class="download-inp-text">Website Name</h3>
           </div>
-          <div class="col col-lg-5 col-12">
+          <div class="col col-lg-5 col-12" style="margin: 0.5% auto 0 auto">
             <input
               class="form-control"
               placeholder="Website Name"
@@ -295,10 +297,10 @@
           </div>
         </div>
         <div class="row center-align">
-          <div class="col col-lg-5 col-12">
+          <div class="col col-lg-5 col-12" style="margin: 0.5% auto 0 auto">
             <h3 class="download-inp-text" for="website-name">Username</h3>
           </div>
-          <div class="col col-lg-5 col-12">
+          <div class="col col-lg-5 col-12" style="margin: 0.5% auto 0 auto">
             <input
               class="form-control"
               placeholder="Username"
@@ -347,16 +349,26 @@
       >
         <div class="carousel-inner">
           <div class="carousel-item active">
-            <h2>Review 1</h2>
+            <h2>
+              A Great Website to get passwords that are perfect for online
+              Privacy
+            </h2>
+            <h5><i class="fa-solid fa-user"></i> Aman, India</h5>
           </div>
           <div class="carousel-item">
-            <h2 class="review-text">Review 2</h2>
+            <h2 class="review-text">
+              hehehhe heheheheheehhehehe eeee hehhehehhehe nice site
+            </h2>
+            <h5><i class="fa-solid fa-user"></i> Aman, India</h5>
           </div>
           <div class="carousel-item">
-            <h2 class="review-text">Review 3</h2>
+            <h2 class="review-text">
+              hehehhehehe hehehheheheh<br />ehehhehehe nice site
+            </h2>
+            <h5><i class="fa-solid fa-user"></i> Aman, India</h5>
           </div>
           <a
-            class="carousel-control-prev btn-dark"
+            class="carousel-control-prev"
             href="#reviewCarousel"
             role="button"
             data-slide="prev"
@@ -375,6 +387,59 @@
           </a>
         </div>
       </div>
+      <form
+        name="review-form"
+        id="user-review"
+        action="javascript:void(0)"
+        class="user-review center-align"
+      >
+        <h2>Submit Review</h2>
+        <div class="row">
+          <div class="col col-6 col-lg-6 col-md-6">
+            <input
+              name="Name"
+              placeholder="Name"
+              required
+              id="name"
+              class="form-control"
+            />
+            <label for="name">Your Name *</label>
+          </div>
+          <div class="col col-6 col-lg-6 col-md-6">
+            <input
+              name="Country"
+              type="text"
+              placeholder="Country"
+              class="form-control"
+              id="country"
+              required
+            />
+            <label for="country">Your Country *</label>
+          </div>
+          <div class="col col-10 col-lg-10 col-md-10">
+            <textarea
+              name="Review"
+              class="form-control"
+              type="text"
+              placeholder="Review"
+              required
+              class="form-control"
+              id="review"
+              rows="3"
+            ></textarea>
+            <label for="review">Write Your Review *</label>
+          </div>
+        </div>
+
+        <button
+          class="btn btn-primary"
+          id="review-form-submit-btn"
+          type="submit"
+          onclick="validateForm()"
+        >
+          Submit Review
+        </button>
+      </form>
     </section>
   </body>
 

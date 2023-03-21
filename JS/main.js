@@ -14,7 +14,9 @@ function generatePassword() {
     }
     var output = document.getElementById("pass-output-display");
     output.value = password;
-    updateUsageCount();
+    var button = document.getElementById('pass-download-btn');
+    button.removeAttribute("disabled");
+    //updateUsageCount();
 }
 
 function displayUsageCount() {
@@ -46,7 +48,6 @@ function showDownloadArea() {
 }
 
 function downloadFile() {
-
     var tempLink = document.createElement("a");
     var password = document.getElementById("pass-output-display").value;
     var downloadInfo = document.getElementById('download-info-text');
@@ -59,20 +60,69 @@ function downloadFile() {
         type: "text/plain;charset=utf-8"
     });
     tempLink.setAttribute('href', URL.createObjectURL(blob));
-    tempLink.setAttribute('download', 'Password ' + username + ' ' + site +'.txt');
+    tempLink.setAttribute('download', 'Password ' + username + ' ' + site + '.txt');
     downloadInfo.style.visibility = "visible";
     tempLink.click();
     URL.revokeObjectURL(tempLink.href);
     tempLink.remove();
 }
 
-function closeDownloadArea(){
+function closeDownloadArea() {
+    document.getElementById('pass-download-btn').setAttribute("disabled", "disabled");
     document.getElementById("download-area").style.display = "none";
     document.getElementById('download-info-text').style.visibility = 'hidden';
     document.getElementById('website-name').value = '';
     document.getElementById('username').value = '';
 }
+
+//Form Control
+
+function validateForm() {
+    var Name = document.forms['review-form']["Name"].value;
+    var Country = document.forms['review-form']["Country"].value;
+    var Review = document.forms['review-form']["Review"].value;
+    if (!(Name == '') && !(Country == "") && !(Review == "")) {
+        SubmitContactForm();
+    }
+}
+
+const scriptURL = 'https://script.google.com/macros/s/AKfycbyNfY4LeCy5DvtgYHpFh0qjki1UZRBawkm6th3E9W2-bfjg66v66Wwfv_nIyT2vjhjNUQ/exec';
+const form = document.forms['review-form'];
+
+function SubmitContactForm() {
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbyNfY4LeCy5DvtgYHpFh0qjki1UZRBawkm6th3E9W2-bfjg66v66Wwfv_nIyT2vjhjNUQ/exec';
+    const form = document.forms['review-form'];
+    var data = new FormData(form);
+    var SubmitButton = document.getElementById("review-form-submit-btn");
+    SubmitButton.innerHTML = 'Submitting';
+    SubmitButton.setAttribute("disabled", "disabled");
+    SubmitButton.onclick = "javascript:void()";
+    fetch(scriptURL, {
+            method: 'POST',
+            body: data
+        })
+        .then(response => CloseContactForm())
+        .catch(error => {
+            alert("There was some error sending the message, Try again.");
+            OnSubmittionError();
+            console.log(error);
+        })
+}
+
+function CloseContactForm() {
+    var FORM = document.getElementById("user-review");
+    console.log(FORM);
+    FORM.innerHTML = "<h2 style='font-weight:500; font-size: 1.5rem;'>Thanks For Submitting Review</h2>";
+}
+
+function OnSubmittionError() {
+    var SubmitButton = document.getElementById("review-form-submit-btn");
+    SubmitButton.innerHTML = 'Submit Review';
+    SubmitButton.removeAttribute("disabled");
+}
+
 // Password Generators
+
 let arrayCharsCaps = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'];
 let arrayCharsSmall = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];
 let arrayNums = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'];

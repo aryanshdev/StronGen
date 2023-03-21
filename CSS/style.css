@@ -313,23 +313,67 @@ body {
 
 /* Reviews */
 #reviews {
-    background-color: white;
     text-align: center;
     color: black;
+}
+
+.carousel-item {
+    padding: 0% 2%;
+    height: 45%;
 }
 
 .count-txt {
     font-size: 1.6rem;
     padding: 5% 0 0.5% 0;
     margin: 0;
-    font-weight: 1000;
+    font-weight: 900;
+    font-family: "Roboto";
     letter-spacing: -0.5px;
 }
 
 #usageCount {
     padding: 0;
     margin: 0;
-    font-family: "Roboto";
+    font-family: "Ubuntu";
+}
+
+.carousel-item {
+    padding: 2.5% 15%;
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    filter: invert(100);
+}
+
+.carousel-item h5 {
+    margin-top: 3%;
+}
+
+.user-review {
+    padding: 2.5% 5% 10% 5%;
+}
+
+.user-review .col {
+    margin: 1% auto 1% auto;
+}
+
+.user-review h2 {
+    font-size: 1.65rem;
+}
+
+.user-review input,
+.user-review textarea {
+    margin: 5% auto 0 auto;
+    border: 1px solid black;
+}
+
+.user-review input {
+    display: inline-block;
+}
+
+.user-review label {
+    font-size: 0.85rem;
 }
 
 /* Media Queries */
@@ -361,7 +405,7 @@ body {
     }
 }
 
-@media (max-width: 720px) {
+@media (max-width: 750px) {
 
     .navbar-brand {
         width: 75%;
@@ -373,5 +417,13 @@ body {
 
     .download-area {
         margin: 7.5% auto 0% auto;
+    }
+
+    .user-review textarea {
+        margin-top: 2%;
+    }
+
+    .user-review label {
+        font-size: 0.75rem;
     }
 }
