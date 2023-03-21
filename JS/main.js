@@ -16,7 +16,7 @@ function generatePassword() {
     output.value = password;
     var button = document.getElementById('pass-download-btn');
     button.removeAttribute("disabled");
-    //updateUsageCount();
+    updateUsageCount();
 }
 
 function displayUsageCount() {
