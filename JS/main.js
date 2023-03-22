@@ -126,13 +126,13 @@ function OnSubmittionError() {
 let arrayCharsCaps = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'];
 let arrayCharsSmall = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];
 let arrayNums = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'];
-let arraySym = ['!', '$', '@', '#', '~', '*', '.', '-', '_', '=', '+', '&', '^', '?'];
+let arraySym = ['!', '@', '#', '.', '-', '_', '=', '+', '?'];
 
 function onlyAlpha(len) {
     let password = '';
     for (let index = 0; index < len; index++) {
         var what = Math.random();
-        if (what < 0.5) {
+        if (what <= 0.5) {
             var randomElement = arrayCharsCaps[Math.floor(Math.random() * 26)];
             password += randomElement;
         } else {
@@ -147,10 +147,10 @@ function onlyNums(len) {
     let password = '';
     for (let index = 0; index < len; index++) {
         var what = Math.random();
-        if (what < 0.3) {
+        if (what <= 0.3) {
             var randomElement = arrayCharsCaps[Math.floor(Math.random() * 26)];
             password += randomElement;
-        } else if (what < 0.6) {
+        } else if (what <= 0.6) {
             var randomElement = arrayCharsSmall[Math.floor(Math.random() * 26)];
             password += randomElement;
         } else {
@@ -165,14 +165,14 @@ function onlySymbols(len) {
     let password = '';
     for (let index = 0; index < len; index++) {
         var what = Math.random();
-        if (what < 0.3) {
+        if (what <= 0.3) {
             var randomElement = arrayCharsCaps[Math.floor(Math.random() * 26)];
             password += randomElement;
-        } else if (what < 0.6) {
+        } else if (what <= 0.6) {
             var randomElement = arrayCharsSmall[Math.floor(Math.random() * 26)];
             password += randomElement;
         } else {
-            var randomElement = arraySym[Math.floor(Math.random() * 10)];
+            var randomElement = arraySym[Math.floor(Math.random() * 9)];
             password += randomElement;
         }
     }
@@ -183,14 +183,14 @@ function everythingPassword(len) {
     let password = '';
     for (let index = 0; index < len; index++) {
         var what = Math.random();
-        if (what < 0.25) {
+        if (what <= 0.25) {
             var randomElement = arrayCharsCaps[Math.floor(Math.random() * 26)];
             password += randomElement;
-        } else if (what < 0.5) {
+        } else if (what <= 0.5) {
             var randomElement = arrayCharsSmall[Math.floor(Math.random() * 26)];
             password += randomElement;
-        } else if (what < 0.75) {
-            var randomElement = arraySym[Math.floor(Math.random() * 10)];
+        } else if (what <= 0.75) {
+            var randomElement = arraySym[Math.floor(Math.random() * 9)];
             password += randomElement;
         } else {
             var randomElement = arrayNums[Math.floor(Math.random() * 10)];

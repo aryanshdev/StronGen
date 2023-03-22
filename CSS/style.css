@@ -295,9 +295,10 @@ body {
     font-weight: 500;
 }
 
-.download-area label{
+.download-area label {
     font-size: 0.9rem;
 }
+
 #website-name,
 #username {
     width: 100%;
@@ -314,8 +315,9 @@ body {
 #download-info-text {
     display: block;
     font-size: 1.25rem;
-    font-weight: 600;
+    font-weight: 500;
     visibility: hidden;
+    margin-top: -1%;
 }
 
 /* Reviews */
@@ -407,7 +409,7 @@ body {
 /* Footer */
 footer {
     background-color: #407bff;
-    padding: 2%;
+    padding: 0.5% 2% 2%;
     text-align: center;
 }
 
@@ -430,9 +432,9 @@ footer p {
 }
 
 .copyright {
-    font-family: 'Roboto';
-    font-weight: 600;
-    font-size: larger;
+    font-family: 'Ubuntu';
+    font-weight: 400;
+    font-size: 1.1rem;
 }
 
 .colfoot-2 {
@@ -440,8 +442,9 @@ footer p {
     padding-left: 5%;
     padding-right: 2%;
 }
-footer a:hover{
-    
+
+footer a:hover {
+
     text-decoration: none;
     color: white;
 }
@@ -458,13 +461,17 @@ footer a:hover{
     padding-top: 2%;
     text-align: left;
 }
-.socials{
+
+.socials {
     margin-bottom: 4%;
 }
-.socials a, .text-links a{
+
+.socials a,
+.text-links a {
     width: fit-content;
     text-decoration: none;
 }
+
 .text-links-link {
     text-decoration: none;
     color: white;
@@ -519,6 +526,10 @@ footer a:hover{
 
     .footer-icon {
         height: 100px;
+    }
+
+    .copyright {
+        font-size: 0.9rem;
     }
 }
 
