@@ -35,7 +35,6 @@ body {
 
 .navbar-collapse {
     flex-direction: row-reverse;
-
 }
 
 .nav-item a {
@@ -71,7 +70,6 @@ body {
     font-weight: 600;
     font-size: 3rem;
     letter-spacing: 1px;
-
 }
 
 .intro-desc {
@@ -216,16 +214,16 @@ body {
 }
 
 .pass-len-label {
-    font-family: 'Roboto';
+    font-family: "Roboto";
     font-weight: 500;
     margin: 2% 0 5% 0;
     color: #ffeb00;
 }
 
 #pass-output-display {
-    font-family: monospace;
+    font-family: 'Ubuntu';
     letter-spacing: 1px;
-    font-weight: 600;
+    font-weight: 400;
     color: black;
 }
 
@@ -262,7 +260,11 @@ body {
     -webkit-appearance: none;
     width: 90%;
     height: 10px;
-    background: linear-gradient(90deg, rgb(255, 85, 0) 25%, #ffeb00 25%, #ffeb00 50.5%, rgb(0, 255, 21) 50.5%);
+    background: linear-gradient(90deg,
+            rgb(255, 85, 0) 25%,
+            #ffeb00 25%,
+            #ffeb00 50.5%,
+            rgb(0, 255, 21) 50.5%);
     border-radius: 15px;
     outline: none;
 }
@@ -281,6 +283,15 @@ body {
     width: 25px;
     height: 25px;
     background: white;
+}
+
+.copied-message {
+    visibility: hidden;
+    text-align: center;
+    display: block;
+    font-size: 1.15rem;
+    margin: 2% auto -1.5% auto;
+    font-weight: 500;
 }
 
 /* Download Sub Section */
@@ -314,7 +325,7 @@ body {
 
 #download-info-text {
     display: block;
-    font-size: 1.25rem;
+    font-size: 1.15rem;
     font-weight: 500;
     visibility: hidden;
     margin-top: -1%;
@@ -428,11 +439,11 @@ footer p {
     font-size: 1.1rem;
     font-weight: 200;
     margin-bottom: 0;
-    font-family: 'Roboto';
+    font-family: "Roboto";
 }
 
 .copyright {
-    font-family: 'Ubuntu';
+    font-family: "Ubuntu";
     font-weight: 400;
     font-size: 1.1rem;
 }
@@ -444,7 +455,6 @@ footer p {
 }
 
 footer a:hover {
-
     text-decoration: none;
     color: white;
 }
@@ -482,7 +492,7 @@ footer a:hover {
 
 /* Media Queries */
 
-@media (max-width:575px) {
+@media (max-width: 575px) {
     .intro-img {
         width: 100%;
     }
@@ -502,7 +512,6 @@ footer a:hover {
 
     .navbar-collapse {
         flex-direction: row;
-
     }
 
     #usageCount {
@@ -513,9 +522,8 @@ footer a:hover {
         font-size: 0.9rem;
     }
 
-
     .review-text {
-        font-size: 1.3rem
+        font-size: 1.3rem;
     }
 
     #use-symbols,
@@ -534,13 +542,12 @@ footer a:hover {
 }
 
 @media (max-width: 990px) {
-
     .navbar-brand {
         width: 75%;
     }
 
     #download-info-text {
-        margin-top: 3%;
+        margin-top: 0%;
     }
 
     .download-area {

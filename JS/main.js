@@ -39,7 +39,13 @@ function updateUsageCount() {
 
 function copyToClipboard() {
     let password = document.getElementById("pass-output-display");
-    navigator.clipboard.writeText(password.value);
+    if (password.value != "") {
+        navigator.clipboard.writeText(password.value);
+        document.getElementById("copied-message").style.visibility = "visible";
+        setTimeout(function () {
+            document.getElementById("copied-message").style.visibility = "hidden";
+        }, 5000);
+    }
 }
 
 function showDownloadArea() {
