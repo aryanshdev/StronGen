@@ -221,9 +221,9 @@ body {
 }
 
 #pass-output-display {
-    font-family: 'Ubuntu';
+    font-family: monospace;
     letter-spacing: 1px;
-    font-weight: 400;
+    font-weight: 800;
     color: black;
 }
 
